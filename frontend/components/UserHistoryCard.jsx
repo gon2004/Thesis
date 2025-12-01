@@ -3,6 +3,7 @@ export const HistoryCard = ({
   id, 
   service, 
   date, 
+  time,
   status, 
   onCancel, 
 }) => {
@@ -28,7 +29,7 @@ export const HistoryCard = ({
       </div>
       <div className="mb-2">
         <span className="font-semibold">Time:</span>{" "}
-        {date}
+        {time}
       </div>
       <div> 
         <span className="font-semibold">Status:</span>{" "}

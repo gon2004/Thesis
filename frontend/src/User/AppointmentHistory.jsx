@@ -3,6 +3,7 @@ import { HistoryCard } from "../../components/UserHistoryCard";
 import { useCustomerPageProtection } from '../../hooks/userProtectionHooks';
 import { update_data } from '../../services/PutMethod';
 import { useFetch } from "../../hooks/useFetch";
+import { appointmentTimeFormat } from "../../utils/formatDate";
 import CancellationModal from "../../components/modal/CancellationModal";
 
 const AppointmentHistory = () => {
@@ -52,6 +53,7 @@ const AppointmentHistory = () => {
               id={appointment._id}
               service={appointment.service.name}
               date={appointment.scheduledDate.toString().split('T')[0]}
+              time={appointmentTimeFormat(appointment.scheduledTime)}
               status={appointment.status}
               onCancel={() => {
                 setAppointmentToCancel(appointment._id);
